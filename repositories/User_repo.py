@@ -20,3 +20,6 @@ class UserRepo:
         self.db.add(user)
         self.db.commit()
         return user 
+    
+    def user_name(self,name:str):
+        return self.db.query(User).filter(User.name == name).first( )
